@@ -13,7 +13,7 @@ print(df.head())
 
 print(df.columns)
 
-#dropping 'unnamed: 26' and 'year' columns
+#drop 'unnamed: 26' and 'year' columns
 df = df[['last_name, first_name', 'player_id', 'player_age',
        'p_formatted_ip', 'ab', 'hit', 'single', 'double', 'triple', 'home_run',
        'k_percent', 'bb_percent', 'batting_avg', 'slg_percent',
@@ -37,39 +37,21 @@ print(df.duplicated())
 
 #feature understanding
 #univariate analysis
-df['IP'].min()
+print(df['IP'].min())
+print(df['IP'].mean())
+print(df['ab'].min())
+print(df['ab'].mean())
+print(df['p_era'].max())
+print(df['p_era'].min())
+print(df['p_era'].mean())
+print(df['batting_avg'].max())
+print(df['batting_avg'].min())
+print(df['home_run'].max())
 
-df['IP'].max()
-
-df['IP'].mean()
-
-df = df[(df.IP > 20)]
-
-df.head(10)
-
-df['ERA'].max()
-
-df['ERA'].min()
-
-df['ERA'].mean()
-
-ax = df['Wins'].value_counts() \
-    .head(10) \
+'''
+ax = df['p_win'].value_counts() \
     .plot(kind = 'barh', title = '2023 Win Counts')
-
-ax.set_xlabel('Number of Wins')
-ax.set_ylabel('Count')
-
-ax = df['Shutouts'].value_counts() \
-    .head(10) \
-    .plot(kind = 'barh', title = '2023 Shutout Counts')
-
-ax.set_xlabel('Count')
-ax.set_ylabel('Number of Shutouts')
-
-ax = df['Quality Starts'].value_counts() \
-    .head(10) \
-    .plot(kind = 'barh', title = '2023 Quality Starts')
-
-ax.set_xlabel('Count')
-ax.set_ylabel('Number of Quality Starts')
+ax.set_xlabel('Number of Pitchers')
+ax.set_ylabel('Number of Wins')
+plt.show()
+'''
