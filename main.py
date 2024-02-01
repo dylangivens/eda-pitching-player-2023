@@ -37,21 +37,20 @@ print(df.duplicated())
 
 #feature understanding
 #univariate analysis
-print(df['IP'].min())
-print(df['IP'].mean())
-print(df['ab'].min())
-print(df['ab'].mean())
-print(df['p_era'].max())
-print(df['p_era'].min())
-print(df['p_era'].mean())
-print(df['batting_avg'].max())
-print(df['batting_avg'].min())
-print(df['home_run'].max())
+print(df['IP'].describe())
+print(df['ab'].describe())
+print(df['p_era'].describe())
+print(df['batting_avg'].describe())
+print(df['home_run'].describe())
+print(df['p_win'].describe())
 
-'''
-ax = df['p_win'].value_counts() \
-    .plot(kind = 'barh', title = '2023 Win Counts')
-ax.set_xlabel('Number of Pitchers')
-ax.set_ylabel('Number of Wins')
+wins = df[['p_win']]
+print(wins)
+
+plt.hist(wins, edgecolor = 'black', range = [0, 20])
+plt.xlabel('Wins')
+plt.ylabel('Frequency')
+plt.title('Pitcher Win Frequency')
 plt.show()
-'''
+
+#multivariate analysis
