@@ -47,10 +47,46 @@ print(df['p_win'].describe())
 wins = df[['p_win']]
 print(wins)
 
-plt.hist(wins, edgecolor = 'black', range = [0, 20])
+plt.hist(wins, edgecolor = 'black', bins = 20)
 plt.xlabel('Wins')
 plt.ylabel('Frequency')
 plt.title('Pitcher Win Frequency')
 plt.show()
 
+quality_starts = df[['p_quality_start']]
+print(quality_starts)
+
+plt.hist(quality_starts, edgecolor = 'black', bins = 25)
+plt.xlabel('Number of Quality Starts')
+plt.ylabel('Frequency')
+plt.title('Pitcher Quality Start Frequency')
+plt.show()
+
+era = df[['p_era']]
+print(era)
+
+plt.hist(era, edgecolor = 'black', bins = 28)
+plt.xlabel('ERA')
+plt.ylabel('Frequency')
+plt.title('Pitcher ERA Frequency')
+plt.show()
+
 #multivariate analysis
+df[['age', 'batting_avg']].plot(kind = 'scatter', x = 'age', y = 'batting_avg')
+plt.title('Opposition Batting Average by Age',)
+plt.show()
+
+df[['age', 'IP']].plot(kind = 'scatter', x = 'age', y = 'IP')
+plt.show()
+
+df[['age', 'p_quality_start']].plot(kind = 'scatter', x = 'age', y = 'p_quality_start')
+plt.show()
+
+df[['p_loss', 'p_total_stolen_base']].plot(kind = 'scatter', x = 'p_loss', y = 'p_total_stolen_base')
+plt.show()
+
+df[['p_win', 'p_total_stolen_base']].plot(kind = 'scatter', x = 'p_win', y = 'p_total_stolen_base')
+plt.show()
+
+df[['k_percent', 'bb_percent']].plot(kind = 'scatter', x = 'k_percent', y = 'bb_percent')
+plt.show()
