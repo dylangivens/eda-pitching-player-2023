@@ -73,20 +73,37 @@ plt.show()
 
 #multivariate analysis
 df[['age', 'batting_avg']].plot(kind = 'scatter', x = 'age', y = 'batting_avg')
-plt.title('Opposition Batting Average by Age',)
+plt.title('Opposition Batting Average by Pitcher Age',)
+plt.xlabel('Pitcher Age')
+plt.ylabel('Batting Average')
 plt.show()
 
 df[['age', 'IP']].plot(kind = 'scatter', x = 'age', y = 'IP')
+plt.title('Innings Pitched by Pitcher Age',)
+plt.xlabel('Pitcher Age')
+plt.ylabel('Innings Pitched')
 plt.show()
 
 df[['age', 'p_quality_start']].plot(kind = 'scatter', x = 'age', y = 'p_quality_start')
+plt.title('Quality Starts by Pitcher Age',)
+plt.xlabel('Pitcher Age')
+plt.ylabel('Quality Starts')
 plt.show()
 
 df[['p_loss', 'p_total_stolen_base']].plot(kind = 'scatter', x = 'p_loss', y = 'p_total_stolen_base')
+plt.title('Stolen Bases Allowed by Total Losses',)
+plt.xlabel('Number of Losses')
+plt.ylabel('Stolen Bases Allowed')
 plt.show()
 
 df[['p_win', 'p_total_stolen_base']].plot(kind = 'scatter', x = 'p_win', y = 'p_total_stolen_base')
+plt.title('Stolen Bases Allowed by Total Wins',)
+plt.xlabel('Number of Wins')
+plt.ylabel('Stolen Bases Allowed')
 plt.show()
 
 df[['k_percent', 'bb_percent']].plot(kind = 'scatter', x = 'k_percent', y = 'bb_percent')
+plt.title('Walk Percentage by Strike Percentage',)
+plt.xlabel('Strike Percentage')
+plt.ylabel('Walk Percentage')
 plt.show()
